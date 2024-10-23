@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Portfolio Website</title>
+</head>
+<body>
+    <header>
+        <div class="logo">AL</div>
+        <nav>
+            <a href="#home" class="active">Home</a>
+            <a href="#projects">Proyectos</a>
+            <a href="#skills">Skills</a>
+            <a href="#education">Education</a>
+            <a href="#experience">Experience</a>
+            <a href="mailto:antonioloya1228@hotmail.com">Contact</a>
+
+
+        </nav>
+    </header>
+    <script>
+        let lastScrollTop = 0; // Variable para rastrear la posición anterior del scroll
+    
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelector('header').classList.add('hidden'); // Añade la clase para ocultar
+            });
+        });
+    
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            const scrollTop = window.scrollY;
+    
+            // Oculta el header cuando se hace scroll hacia abajo
+            if (scrollTop > lastScrollTop) {
+                header.classList.add('hidden'); // Ocultar el header
+            } else {
+                // Muestra el header cuando se hace scroll hacia arriba
+                header.classList.remove('hidden'); // Mostrar el header
+            }
+    
+            lastScrollTop = scrollTop; // Actualiza la posición anterior del scroll
+        });
+    </script>
+    
+    
+    
+    <section id="home" class="home">
+        <div class="home-img">
+        
+            <img src="image/yo.jpeg"  alt="">
+        </div>
+        <div class="home-content">
+            <h1>Hi, It's <span>Antonio</span></h1>
+            <h3 class="typing-text">I'm a <span></span></h3>
+            <p>Hola, soy Antonio. Colaboro en el desarrollo de experiencias inmersivas utilizando Unity y Realidad Virtual, habiendo trabajado en proyectos como recorridos interactivos en VR. Además, he participado en proyectos de desarrollo web.</p>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/antonio-de-jes%C3%BAs-loya-castillo-8802182a3/"><i class="fa-brands fa-linkedin"></i> <span>LinkedIn</span></a>
+                <a href="https://github.com/AntonioLoya"><i class="fa-brands fa-github"></i> <span>GitHub</span></a>
+                <a href="https://x.com/antonioloya1221"><i class="fa-brands fa-x-twitter"></i> <span>X (Twitter)</span></a>
+                <a href="https://www.instagram.com/_antonioloya/"><i class="fa-brands fa-instagram"></i> <span>Instagram</span></a>
+                <a href="tu-archivo-cv.pdf" target="_blank"><i class="fa-solid fa-file"></i> <span>CV</span></a>
+            </div>
+            
+       
+        </div>
+    </section>
+    <section id="projects" class="projects">
+    <h2>
+        <i class="fa-solid fa-code"></i> Proyectos
+    </h2>
+    <div class="project-list">
+        <div class="project">
+            <div class="project-info">
+                <h3>Reconocimiento Facial de Emociones</h3>
+                <p class="description">Prueba de detección de emociones basada en la salida de parámetros de clmtrackr.</p>
+                <p class="technologies">Tecnologías utilizadas: HTML, CSS, JavaScript, clmtrackr.</p>
+                <a href="https://reconocimiento-facial-de-emociones.netlify.app/" class="preview-btn" target="_blank">Ver Proyecto</a>
+            </div>
+            <div class="project-image">
+                <img src="image/Reconocimientofacial.png" alt="Descripción de la imagen del proyecto 1">
+            </div>
+        </div>
+        <!-- Más proyectos -->
+    </div>
+</section>
+
+   
+    
+    <section id="skills">
+        <h2>Skills</h2>
+        <p>Aquí va el contenido de skills.</p>
+    </section>
+    
+    <section id="education">
+        <h2>Education</h2>
+        <p>Aquí va el contenido de educación.</p>
+    </section>
+    
+    <section id="experience">
+        <h2>Experience</h2>
+        <p>Aquí va el contenido de experiencia.</p>
+    </section>
+    
+  
+    
+</body>
+</html>

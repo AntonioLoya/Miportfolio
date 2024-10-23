@@ -1,0 +1,386 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: black;
+    color: white;
+}
+
+header {
+    margin-top: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 9%;
+    background-color: transparent;
+    filter: drop-shadow(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    transition: opacity 0.5s ease, visibility 0.5s ease; /* Añadido para la transición */
+    opacity: 1; /* Visible por defecto */
+    visibility: visible; /* Visible por defecto */
+}
+
+header.hidden {
+    opacity: 0; /* Ocultar el header */
+    visibility: hidden; /* Asegura que no se pueda hacer clic en él */
+}
+
+
+.logo{
+    font-size: 3rem;
+    color: #4b7bb7; /* Cambiado a azul */
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.logo:hover{
+    transform: scale(1.1);
+}
+
+nav a{
+    font-size: 1.8rem;
+    color: white;
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+nav a:hover,
+nav a.active{
+    color: #4b7bb7; /* Cambiado a azul */
+    border-bottom: 3px solid #4b7bb7; /* Cambiado a azul */
+}
+
+@media(max-width:995px){
+    nav{
+        position: absolute;
+        display: none;
+        top: 0;
+        right: 0;
+        width: 40%;
+        border-left: 3px solid #4b7bb7; /* Cambiado a azul */
+        border-bottom: 3px solid #4b7bb7; /* Cambiado a azul */
+        border-bottom-left-radius: 2rem;
+        padding: 1rem solid;
+        background-color: #161616;
+        border-top: 0.1rem solid rgba(0,0,0,0.1);
+    }
+
+    nav.active{
+        display: block;
+    }
+
+    nav a{
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+
+    nav a:hover,
+    nav a.active{
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border-bottom: 0.5rem solid #4b7bb7; /* Cambiado a azul */
+    }
+}
+
+section{
+    min-height: 100vh;
+    padding: 5rem 9% 5rem;
+}
+
+.home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    background-color: black;
+}
+
+.home .home-content h1{
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+span{
+    color: #4b7bb7; /* Cambiado a azul */
+}
+
+.home-content h3{
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.home-content p{
+    font-size: 1.6rem;
+}
+
+.home-img{
+    border-radius: 50%;
+}
+
+.home-img img{
+    position: relative;
+    width: 32vw;
+    border-radius: 50%;
+    box-shadow: 0 0 25px solid #4b7bb7; /* Cambiado a azul */
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+
+.home-img img:hover{
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 6rem; /* Aumenta el tamaño del círculo */
+    height: 6rem; /* Aumenta el tamaño del círculo */
+    background-color: transparent;
+    border: 0.2rem solid #4b7bb7;
+    font-size: 2rem; /* Tamaño del icono */
+    border-radius: 50%;
+    margin: 3rem 1.5rem; /* Ajustar margen para evitar interferencia */
+    transition: 0.3s ease;
+    color: #4b7bb7;
+    position: relative;
+    text-decoration: none;
+    pointer-events: auto; /* Asegurarse de que el texto sea clickeable */
+}
+
+.social-icons a:hover {
+    color: black;
+    transform: scale(1.3) translateY(-5px);
+    background-color: #4b7bb7;
+    box-shadow: 0 0 25px #4b7bb7;
+}
+
+/* Ocultar texto por defecto */
+.social-icons span {
+    display: none; /* Ocultar texto por defecto */
+    margin-left: 10px; /* Añade espacio entre el icono y el texto */
+    font-size: 1rem; /* Tamaño del texto reducido para que quepa en el círculo */
+    color: white; /* Cambia el color del texto según prefieras */
+    white-space: nowrap; /* Evitar que el texto se corte en varias líneas */
+}
+
+/* Mostrar texto solo al hacer hover sobre el icono */
+.social-icons a:hover span {
+    display: inline-block;
+    transform: scale(1.1);
+}
+
+/* Tamaño de iconos */
+.social-icons i {
+    font-size: 2.4rem; /* Aumentar tamaño del icono */
+}
+
+/* Ajustar el z-index para que el texto no interfiera con otros iconos */
+.social-icons span {
+    position: relative;
+    z-index: 1; /* Asegurarse de que el texto esté por encima del fondo */
+}
+
+
+.btn{
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background-color: black;
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: #4b7bb7; /* Cambiado a azul */
+    letter-spacing: 0.3rem;
+    font-weight: 600;
+    border: 2px solid #4b7bb7; /* Cambiado a azul */
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.btn:hover{
+    transform: scale3d(1.03);
+    background-color: #4b7bb7; /* Cambiado a azul */
+    color: black;
+    box-shadow: 0 0 25px #4b7bb7; /* Cambiado a azul */
+}
+
+.typing-text{
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+}
+
+.typing-text span{
+    position: relative;
+}
+
+.typing-text span::before{
+    content: "software Developer";
+    color: #4b7bb7; /* Cambiado a azul */
+    animation: words 20s infinite;
+}
+
+.typing-text span::after{
+    content: "";
+    background-color: black;
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid black;
+    right: -8;
+    animation: cursor 0.6s infinite;
+}
+.projects {
+    padding: 5rem 9%;
+    background-color: #161616; /* Cambia el fondo de la sección */
+    color: white;
+}
+
+.projects h2 {
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.project {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4rem;
+    padding: 2rem;
+    border-radius: 1rem;
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente para los proyectos */
+}
+
+.project-info {
+    flex: 1; /* Para que ocupe el espacio restante */
+    margin-right: 2rem; /* Espacio entre la info y la imagen */
+}
+
+.project-info h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.project-info .description {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+.project-info .technologies {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+}
+
+.preview-btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: #4b71b7; /* Cambia el color del botón */
+    border-radius: 4rem;
+    color: white;
+    font-size: 1.4rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.preview-btn:hover {
+    background-color: #4b7bb7; /* Cambia el color al pasar el ratón */
+}
+
+.project-image {
+    flex: 0 0 30%; /* Ajusta el tamaño de la imagen */
+}
+
+.project-image img {
+    width: 100%; /* Ajusta la imagen al contenedor */
+    border-radius: 1rem; /* Bordes redondeados para la imagen */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Sombra para la imagen */
+}
+
+.projects h2 {
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.projects h2 i {
+    margin-right: 1rem;
+    font-size: 3.5rem;
+    color: #4b7bb7; /* Color azul para el ícono */
+}
+
+
+
+@keyframes cursor{
+    to{
+        border-left: 3px solid #4b7bb7; /* Cambiado a azul */
+    }
+}
+
+@keyframes words{
+    0%, 20%{
+        content: "Web Developer";
+    }
+    21%, 40%{
+        content: " VR Developer";
+    }
+   
+    
+    81%, 100%{
+        content: "Script Writer";
+    }
+}
+
+@media (max-width: 1000px){
+    .home{
+        gap: 4rem;
+    }
+}
+
+@media(max-width:995px){
+    .home{
+        flex-direction: column;
+        margin: 5rem 4rem;
+    }
+
+    .home .home-content h3{
+        font-size: 2.5rem;
+    }
+
+    .home-content h1{
+        font-size: 5rem;
+    }
+
+    .home-img img{
+        width: 70vw;
+        margin-top: 4rem;
+    }
+}
