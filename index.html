@@ -10,45 +10,44 @@
 </head>
 <body>
     <header>
-        <div class="logo">AL</div>
-        <nav>
-            <a href="#home" class="active">Home</a>
+        <div class="nav-links">
             <a href="#projects">Proyectos</a>
-            <a href="#skills">Skills</a>
-            <a href="#education">Education</a>
-            <a href="#experience">Experience</a>
-            <a href="mailto:antonioloya1228@hotmail.com">Contact</a>
+            <a href="#education">Educación</a>
+            <a href="#experience">Experiencia</a>
+            <a href="mailto:antonioloya1228@hotmail.com">Contacto</a>
 
-
-        </nav>
+        </div>
     </header>
+    
     <script>
-        let lastScrollTop = 0; // Variable para rastrear la posición anterior del scroll
-    
-        document.querySelectorAll('nav a').forEach(link => {
-            link.addEventListener('click', function() {
-                document.querySelector('header').classList.add('hidden'); // Añade la clase para ocultar
-            });
-        });
-    
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            const scrollTop = window.scrollY;
-    
-            // Oculta el header cuando se hace scroll hacia abajo
-            if (scrollTop > lastScrollTop) {
-                header.classList.add('hidden'); // Ocultar el header
-            } else {
-                // Muestra el header cuando se hace scroll hacia arriba
-                header.classList.remove('hidden'); // Mostrar el header
-            }
-    
-            lastScrollTop = scrollTop; // Actualiza la posición anterior del scroll
-        });
+        function toggleMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('show');
+}
+
     </script>
     
     
-    
+    <script>
+        let lastScrollTop = 0; // Variable para almacenar la posición del scroll
+
+window.addEventListener("scroll", function() {
+    const header = document.querySelector("header");
+    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    // Comparar la posición del scroll actual con la anterior
+    if (currentScroll > lastScrollTop) {
+        // Si el scroll es hacia abajo
+        header.classList.add("hidden"); // Ocultar el header
+    } else {
+        // Si el scroll es hacia arriba
+        header.classList.remove("hidden"); // Mostrar el header
+    }
+
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Para evitar valores negativos
+});
+
+    </script>
     <section id="home" class="home">
         <div class="home-img">
         
@@ -88,25 +87,42 @@
         <!-- Más proyectos -->
     </div>
 </section>
+<section id="education" class="education">
+    <h2><i class="fa-solid fa-graduation-cap"></i> Educación</h2>
+    <div class="education-item">
+        <div class="education-info">
+            <h3>Nombre del Título o Curso</h3>
+            <p class="institution">Nombre de la Institución</p>
+            <p class="duration">Año de inicio - Año de finalización</p>
+            <p class="description">Descripción breve sobre lo aprendido, proyectos destacados o habilidades adquiridas.</p>
+        </div>
+    </div>
+    <!-- Añade más elementos de educación según sea necesario -->
+</section>
+<section id="experience" class="experience">
+    <h2><i class="fa-solid fa-briefcase"></i> Experiencia</h2>
+    <div class="timeline">
+        <div class="timeline-item">
+            <div class="timeline-info">
+                <h3>Puesto o Título del Trabajo</h3>
+                <p class="company">Nombre de la Empresa</p>
+                <p class="duration">Año de inicio - Año de finalización</p>
+                <p class="description">Descripción breve de las responsabilidades y logros en este puesto.</p>
+                <a href="pagina-de-experiencia-1.html" class="details-btn">Ver Más</a> <!-- Enlace en lugar de botón -->
+            </div>
+        </div>
+        
+        <!-- Añade más elementos de experiencia según sea necesario -->
+    </div>
+</section>
+<script>
+    document.querySelectorAll('.details-btn').forEach(button => {
+    button.addEventListener('click', function() {
+        const description = this.previousElementSibling; // La descripción
+        description.classList.toggle('show'); // Alternar la visibilidad
+    });
+});
+</script>
 
-   
-    
-    <section id="skills">
-        <h2>Skills</h2>
-        <p>Aquí va el contenido de skills.</p>
-    </section>
-    
-    <section id="education">
-        <h2>Education</h2>
-        <p>Aquí va el contenido de educación.</p>
-    </section>
-    
-    <section id="experience">
-        <h2>Experience</h2>
-        <p>Aquí va el contenido de experiencia.</p>
-    </section>
-    
-  
-    
 </body>
 </html>
