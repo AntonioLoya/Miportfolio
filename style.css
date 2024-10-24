@@ -19,7 +19,7 @@ body{
     height: 100vh;
     overflow-x: hidden;
     background-color: black;
-    color: white;
+    color: #666;
 }
 
 header {
@@ -53,7 +53,7 @@ header .nav-links {
 
 header .nav-links a {
     font-size: 1.5rem; /* Ajusta el tamaño de fuente para pantallas más pequeñas */
-    color: white;
+    color: #666;
     margin: 0 1rem; /* Espacio entre los enlaces */
     font-weight: 500;
     transition: 0.3s ease;
@@ -174,23 +174,29 @@ span{
     font-weight: 500;
 }
 
+.social-icons {
+    display: flex; /* Usar flexbox para alinear en fila */
+    flex-wrap: nowrap; /* Evitar que los iconos se envuelvan en otra fila */
+    justify-content: center; /* Centrar los iconos en el contenedor */
+    margin: 20px 0; /* Margen para el contenedor, si es necesario */
+}
+
 .social-icons a {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 6rem; /* Aumenta el tamaño del círculo */
-    height: 6rem; /* Aumenta el tamaño del círculo */
+    width: 6rem; /* Tamaño del círculo */
+    height: 6rem; /* Tamaño del círculo */
     background-color: transparent;
     border: 0.2rem solid #4b7bb7;
     font-size: 2rem; /* Tamaño del icono */
     border-radius: 50%;
-    margin: 3rem 1.5rem; /* Ajustar margen para evitar interferencia */
+    margin: 0 0.5rem; /* Ajustar margen para evitar interferencia */
     transition: 0.3s ease;
     color: #4b7bb7;
     position: relative;
     text-decoration: none;
     pointer-events: auto; /* Asegurarse de que el texto sea clickeable */
-    
 }
 
 .social-icons a:hover {
@@ -278,7 +284,7 @@ span{
 .projects {
     padding: 5rem 9%;
     background-color: #000000; /* Cambia el fondo de la sección */
-    color: white;
+    color: #666;
 }
 
 .projects h2 {
@@ -303,6 +309,13 @@ span{
     padding: 2rem;
     border-radius: 1rem;
     background-color: #ffffff1a; /* Fondo semi-transparente para los proyectos */
+    transition: all 0.3s ease; /* Transición suave para el hover */
+}
+
+/* Efecto hover para los proyectos */
+.project:hover {
+    transform: scale(1.05); /* Escala al pasar el mouse */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra para el efecto hover */
 }
 
 .project-info {
@@ -311,10 +324,10 @@ span{
 }
 
 .project-info h3 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+    font-size: 2rem; /* Cambia el tamaño a 4rem para que coincida con Educación y Experiencia */
+    color: #003a70; /* Cambia el color a azul */
+    margin-bottom: 1.6rem;
 }
-
 .project-info .description {
     font-size: 1.6rem;
     margin-bottom: 1rem;
@@ -327,17 +340,17 @@ span{
 
 .preview-btn {
     display: inline-block;
-    padding: 0.8rem 1.5rem;
-    background-color: #4b71b7; /* Cambia el color del botón */
-    border-radius: 4rem;
+    background: linear-gradient(90deg, #4b7bb7, #003a70);
     color: white;
-    font-size: 1.4rem;
+    padding: 10px 20px;
+    border-radius: 30px;
     text-decoration: none;
-    transition: background-color 0.3s ease;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .preview-btn:hover {
-    background-color: #4b7bb7; /* Cambia el color al pasar el ratón */
+    background: linear-gradient(90deg, #003a70, #4b7bb7);
+    transform: translateY(-5px);
 }
 
 .project-image {
@@ -350,37 +363,63 @@ span{
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Sombra para la imagen */
 }
 
+.technologies img,
+.technologies svg {
+    width: 24px; /* Tamaño del ícono */
+    height: 24px; /* Tamaño del ícono */
+    margin-right: 5px; /* Espacio entre íconos */
+    vertical-align: middle; /* Alineación vertical */
+}
+
+
+
+
+
+.education {
+    padding: 5rem 9%;
+    background-color: #000000;
+    color: #666;
+}
 
 .education h2 {
-    font-size: 4rem; /* Tamaño de fuente */
-    text-align: center; /* Alineación centrada */
-    margin-bottom: 3rem; /* Espacio inferior */
-    display: flex; /* Usar flexbox para centrar el contenido */
-    justify-content: center; /* Centrar horizontalmente */
-    align-items: center; /* Centrar verticalmente */
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .education h2 i {
-    margin-right: 1rem; /* Espacio a la derecha del ícono */
-    font-size: 3.5rem; /* Tamaño del ícono */
-    color: #4b7bb7; /* Color azul para el ícono */
+    margin-right: 1rem;
+    font-size: 3.5rem;
+    color: #4b7bb7;
 }
 
 .education-item {
-    margin: 2rem 0; /* Espacio entre los ítems de educación */
-    display: flex; /* Usar flexbox para el contenido */
-    flex-direction: column; /* Alinear los elementos en columna */
-    align-items: flex-start; /* Alinear al inicio */
+    margin: 2rem 0;
+    padding: 2rem;
+    background-color: #ffffff1a;
+    border-radius: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.education-item:hover {
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .education-info h3 {
-    font-size: 2.5rem; /* Tamaño del título */
-    margin-bottom: 0.5rem; /* Espacio debajo del título */
+    font-size: 2rem; /* Asegúrate que el tamaño sea el mismo */
+    color: #003a70; /* Cambia el color a azul */
+    margin-bottom: 1rem;
 }
 
+
 .education-info p {
-    font-size: 1.6rem; /* Tamaño de la información */
-    margin-bottom: 0.5rem; /* Espacio entre párrafos */
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
 }
 
 .experience h2 {
@@ -406,14 +445,17 @@ span{
 }
 
 .experience-info h3 {
-    font-size: 4rem; /* Tamaño del título */
-    margin-bottom: 0.5rem; /* Espacio debajo del título */
+    font-size: 2.5rem; /* Tamaño de letra igual que en Proyectos */
+    color: #003a70; /* Color azul */
+    margin-bottom: 0.5rem;
+    font-weight: bold; /* Mantiene el texto en negrita */
 }
 
 .experience-info p {
-    font-size: 1.8rem; /* Aumentar el tamaño de la información */
+    font-size: 1.6rem; /* Asegúrate que este tamaño sea igual en todas las secciones */
     margin-bottom: 0.5rem; /* Espacio entre párrafos */
 }
+
 .timeline {
     position: relative; /* Para posicionar los elementos en la línea del tiempo */
     padding: 1rem 0; /* Espacio alrededor de la línea del tiempo */
@@ -441,23 +483,43 @@ span{
     border-radius: 8px; /* Bordes redondeados */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
 }
+.timeline-item:hover {
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.timeline-item h3 {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #003a70;
+    margin-bottom: 10px;
+}
+
+.timeline-item p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
 .details-btn {
-    padding: 0.75rem 1.5rem; /* Aumentar el espacio interno del botón */
-    font-size: 1.6rem; /* Aumentar el tamaño de la fuente del botón */
-    display: inline-block; /* Asegurarse de que sea un bloque en línea */
-    margin-top: 1rem; /* Espacio encima del botón */
-    padding: 0.5rem 1rem; /* Espacio interno del botón */
-    background-color: #4b7bb7; /* Color del botón */
-    color: white; /* Color del texto */
-    border: none; /* Sin borde */
-    border-radius: 4px; /* Bordes redondeados */
-    text-decoration: none; /* Sin subrayado */
-    transition: background-color 0.3s; /* Transición suave */
+    display: inline-block;
+    background: linear-gradient(90deg, #4b7bb7, #003a70);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .details-btn:hover {
-    background-color: #3a5f7a; /* Color al pasar el ratón */
+    background: linear-gradient(90deg, #003a70, #4b7bb7);
+    transform: translateY(-5px);
 }
+
 
 /* Estilo base para pantallas grandes */
 html {
@@ -572,6 +634,72 @@ html {
 }
 
 
+/* Estilos para el modal */
+.modal {
+    display: none; /* Ocultar el modal por defecto */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #4b7bb7;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px; /* Limitar ancho máximo */
+    width: 90%; /* Ancho responsivo */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra */
+    position: relative;
+    text-align: center;
+    color: #333; /* Color del texto */
+    transition: all 0.3s ease-in-out; /* Transición suave */
+}
+
+.modal-content img {
+    max-width: 100%; /* La imagen no debe exceder el ancho del modal */
+    height: auto; /* Mantener proporción de la imagen */
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra para la imagen */
+}
+
+.modal-content p {
+    font-size: 1.6rem; /* Ajustar tamaño del texto */
+    color: #f5f6f8; /* Color acorde al tema */
+    margin-top: 1rem;
+}
+
+.close {
+    color: #4b7bb7;
+    font-size: 2.5rem;
+    font-weight: bold;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+}
+
+/* Animación para el modal */
+@keyframes modalFadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-content {
+    animation: modalFadeIn 0.5s;
+}
 
 
 
