@@ -2,6 +2,7 @@
 <html lang="en">
     
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/image/Logo.png" type="image/x-icon"> <!-- Aquí agregas el favicon -->
@@ -23,44 +24,16 @@
         
     </header>
     
-    <script>
-        function toggleMenu() {
-    const navLinks = document.querySelector('.nav-links');
-    navLinks.classList.toggle('show');
-}
-
-    </script>
     
-    
-    <script>
-        let lastScrollTop = 0; // Variable para almacenar la posición del scroll
-
-window.addEventListener("scroll", function() {
-    const header = document.querySelector("header");
-    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-
-    // Comparar la posición del scroll actual con la anterior
-    if (currentScroll > lastScrollTop) {
-        // Si el scroll es hacia abajo
-        header.classList.add("hidden"); // Ocultar el header
-    } else {
-        // Si el scroll es hacia arriba
-        header.classList.remove("hidden"); // Mostrar el header
-    }
-
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Para evitar valores negativos
-});
-
-    </script>
     <section id="home" class="home">
         <div class="home-img">
         
             <img src="image/yo.jpeg"  alt="">
         </div>
         <div class="home-content">
-            <h1>Hi, It's <span>Antonio</span></h1>
-            <h3 class="typing-text">I'm a <span></span></h3>
-            <p>Hola, soy Antonio. Colaboro en el desarrollo de experiencias inmersivas utilizando Unity y Realidad Virtual, habiendo trabajado en proyectos como recorridos interactivos en VR. Además, he participado en proyectos de desarrollo web.</p>
+            <h1>Hola, es <span>Antonio</span></h1>
+            <h3 class="typing-text">Soy un <span></span></h3>
+            <p>Colaboro en el desarrollo de experiencias inmersivas utilizando el motor gráfico Unity, enfocándome en tecnologías de realidad virtual, en las que he participado en proyectos como recorridos interactivos. Además, he incursionado en el desarrollo web, donde he adquirido conocimientos básicos en HTML, CSS y JavaScript.</p>
             <div class="social-icons">
                 <a href="https://www.linkedin.com/in/antonio-de-jes%C3%BAs-loya-castillo-8802182a3/"><i class="fa-brands fa-linkedin"></i> <span>LinkedIn</span></a>
                 <a href="https://github.com/AntonioLoya"><i class="fa-brands fa-github"></i> <span>GitHub</span></a>
@@ -122,7 +95,7 @@ window.addEventListener("scroll", function() {
                 <h3><i class="fa-solid fa-vr-cardboard"></i> Prestador de servicio social</h3>
                 <p class="company"> <i class="fa-solid fa-school"></i> Universidad Juárez Autonóma de Tabasco</p>
                 <p class="duration"> <i class="fa-solid fa-calendar-alt"></i> Agosto 2023</p>
-                <p class="description"> <i class="fa-solid fa-info-circle"></i> Colaboré durante 6 meses junto con la División Académica de Ciencias y Tecnologías de la Información de la Universidad Juárez Autonóma de Tabasco en el desarrollo de expereincias inmersivas, haciendo un recorrido vitual, utilizando Unity como motor gráfico con el lenguaje C# y Blender para el modelado 3d. Duranta este periodo se utilizaron técnicas de optimización como Occlusion Culling, LOD (Level of Detail), Bilboard entre otras.</p>
+                <p class="description"> <i class="fa-solid fa-info-circle"></i> Colaboré durante 6 meses junto con la División Académica de Ciencias y Tecnologías de la Información de la Universidad Juárez Autonóma de Tabasco en el desarrollo de expereincias inmersivas, haciendo un recorrido vitual, utilizando Unity como motor gráfico con el lenguaje C# y Blender para el modelado 3D. Duranta este periodo se utilizaron técnicas de optimización como Occlusion Culling, LOD (Level of Detail), Bilboard entre otras.</p>
                 <a href="https://casa-cacao.ujat.mx/" class="details-btn">Ver Más</a> <!-- Enlace en lugar de botón -->
             </div>
         </div>
@@ -178,19 +151,28 @@ window.addEventListener("scroll", function() {
                             </div>
                         </div>
                     </div>
-   <!-- Modal 1 -->
+                    
+                    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+                    <!-- Modal 1 -->
 <div id="myModal1" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal('myModal1')">&times;</span>
-        <img src="/image/RA.jpeg" alt="Descripción del proyecto">
-        <p>Ejemplo de modelos 3D.</p>
+    <div class="modal-content" style="background-color: #0d0d0d; color: #e0e0e0; padding: 20px; border-radius: 8px; text-align: center;">
+        <span class="close" onclick="closeModal('myModal1')" style="float: right; cursor: pointer; color: #e0e0e0;">&times;</span>
+        <h2 style="font-family: Arial, sans-serif; color: #007bff;">Ejemplo de Modelo 3D</h2>
+
+        <!-- Model Viewer -->
+        <model-viewer src="/image/Carrizo.glb" alt="Modelo 3D del proyecto" camera-controls ar style="width: 100%; height: 300px; background: #333;">
+        </model-viewer>
+
+        <p style="margin-top: 15px; font-size: 1em; color: #e0e0e0;">Interactúa con el modelo para visualizarlo en 3D.</p>
     </div>
 </div>
 
+
 <!-- Modal 2 -->
 <div id="myModal2" class="modal">
-    <div class="modal-content">
+    <div class="modal-content" style="background-color: #0d0d0d; color: #e0e0e0; padding: 20px; border-radius: 8px; text-align: center;">
         <span class="close" onclick="closeModal('myModal2')">&times;</span>
+        <h2 style="font-family: Arial, sans-serif; color: #007bff;">X DEV LAB</h2>
         <img src="/image/xdellap.jpeg" alt="Descripción del proyecto">
         <p>Estudiantes y profesores.</p>
     </div>
@@ -208,10 +190,11 @@ function closeModal(modalId) {
 <section id="about-me" class="about-me">
     <h2><i class="fa-solid fa-user"></i> Sobre Mí</h2>
     <div class="about-content">
-        <p>Soy Antonio Loya, un desarrollador apasionado por la creación de experiencias inmersivas utilizando tecnologías como Unity, Realidad Virtual (VR) y Realidad Aumentada (AR). He colaborado en proyectos de alto impacto en estas áreas, además de participar en desarrollo web y aplicaciones móviles. Mi formación en Ingeniería en Sistemas Computacionales me ha permitido adquirir habilidades en diversas áreas de la tecnología, siempre buscando soluciones innovadoras y creativas.</p>
+        <p>Soy Antonio De Jesús Loya Castillo, tengo cerca de 1 año de experiencia como desarrollador en la creación de experiencias inmersivas, Realidad Virtual (VR) y Realidad Aumentada (AR). Además, he incursionado en la creación de páginas web; aunque esta área no es mi fuerte, estoy comprometido a seguir aprendiendo y mejorando mis habilidades.</p>
+        <p>Actualmente, colaboro en el laboratorio de desarrollo de aplicaciones de la División Académica de Ciencias y Tecnologías de la Información de la Universidad Juárez Autónoma de Tabasco. Esta experiencia me permite aplicar mis conocimientos y adquirir nuevas competencias en el campo tecnológico.</p>
+        <p>Como desarrollador de experiencias innmersivas tengo la capacidad de utilizar el motor gráfico Unity y el lenguaje de programación C#. Tengo conocimientos en programación que abarcan C++ y Java, además, estoy incursionado en el mundo del desarrallo web donde he adquirido conocimientos básicos en HTML, CSS y JavaScript. He estado explorando frameworks como React, Astro y Node.js, aunque mi experiencia hasta ahora ha sido breve. Estoy ansioso por profundizar en su uso para crear aplicaciones web más dinámicas y eficientes. </p>
         <p>Me considero una persona curiosa y siempre en constante aprendizaje, buscando nuevas maneras de combinar tecnología y creatividad para resolver problemas y mejorar la experiencia de los usuarios.</p>
-        <p>Fuera del ámbito profesional, me interesa el arte digital y la naturaleza, y siempre estoy en busca de nuevas formas de combinar mis pasiones para crear experiencias únicas.</p>
-    </div>
+        
 
     <div class="skills" style="margin-top: 40px;"> <!-- Añadir margen superior aquí -->
         <h3><i class="fa-solid fa-laptop-code"></i> Habilidades</h3>
@@ -235,7 +218,7 @@ function closeModal(modalId) {
 
 <footer style="background-color: #0d0d0d; color: #e0e0e0; padding: 40px 20px; text-align: center; font-family: Arial, sans-serif; border-top: 3px solid #007bff;">
     <div style="max-width: 1200px; margin: auto;">
-        <p style="margin: 0; font-size: 1.1em; font-weight: bold;">&copy; 2024 Antonio Loya</p>
+        <p style="margin: 0; font-size: 1.1em; font-weight: bold;">&copy; 2024 Antonio De Jesús Loya Castillo.</p>
         <p style="margin: 8px 0; font-size: 0.95em; color: #cccccc;">
             Desarrollador apasionado por crear experiencias inmersivas y soluciones innovadoras.
         </p>
@@ -295,15 +278,8 @@ function closeModal(modalId) {
         });
     });
 </script>
-
-
 <script>
-    document.querySelectorAll('.details-btn').forEach(button => {
-    button.addEventListener('click', function() {
-        const description = this.previousElementSibling; // La descripción
-        description.classList.toggle('show'); // Alternar la visibilidad
-    });
-});
+    
 </script>
 
 </body>

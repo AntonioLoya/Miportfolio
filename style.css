@@ -21,32 +21,12 @@ body{
     background-color: black;
     color: #666;
 }
+
 body, html {
     overflow-x: hidden; /* Esto asegura que no haya desplazamiento horizontal */
+    
 }
 
-header {
-    margin-top: 20px;
-    position: fixed; /* Mantiene el header fijo en la parte superior */
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 1rem 5%;
-    background-color: transparent;
-    filter: drop-shadow(10px);
-    display: flex;
-    justify-content: center; /* Centra todo el contenido del header */
-    align-items: center;
-    z-index: 100;
-    transition: opacity 0.5s ease, visibility 0.5s ease; /* Añadido para la transición */
-    opacity: 1; /* Visible por defecto */
-    visibility: visible; /* Visible por defecto */
-}
-
-header.hidden {
-    opacity: 0; /* Ocultar el header */
-    visibility: hidden; /* Asegura que no se pueda hacer clic en él */
-}
 
 header .nav-links {
     display: flex;
@@ -120,7 +100,7 @@ header .nav-links a.active {
 }
 
 section {
-    min-height: 100vh; /* Asegura que cada sección ocupe al menos toda la altura de la ventana */
+    min-height: 90vh; /* Asegura que cada sección ocupe al menos toda la altura de la ventana */
     padding: 2rem 9%; /* Añade un poco de espacio interno */
     box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
 }
@@ -137,6 +117,7 @@ header {
     align-items: center;
     gap: 8rem;
     background-color: black;
+    
 }
 
 .home .home-content h1{
@@ -175,7 +156,9 @@ span{
 .home-img img:hover{
     font-size: 1.8rem;
     font-weight: 500;
+    transform: scale(1.05); /* Efecto de hover */
 }
+
 
 .social-icons {
     display: flex; /* Usar flexbox para alinear en fila */
@@ -261,27 +244,34 @@ span{
     font-size: 34px;
     font-weight: 600;
     min-width: 280px;
+    line-height: 1.2; /* Aumentar ligeramente el line-height */
 }
+.typing-text {
+    line-height: 1; /* Ajusta según sea necesario */
+}
+
 
 .typing-text span{
     position: relative;
+     display: inline-block;
 }
 
 .typing-text span::before{
-    content: "software Developer";
+    content: "Desarrollador VR";
     color: #4b7bb7; /* Cambiado a azul */
     animation: words 20s infinite;
 }
 
-.typing-text span::after{
+.typing-text span::after {
     content: "";
     background-color: black;
-    position: absolute;
-    width: calc(100% + 8px);
+    position: absolute; /* Cambiado a absolute para que el cursor se posicione en relación al span */
+    width: 3px; /* Ajusta el ancho del cursor para que se vea mejor */
     height: 100%;
     border-left: 3px solid black;
-    right: -8;
+    right: 1; /* Cambiado a 0 para que el cursor esté al final del texto */
     animation: cursor 0.6s infinite;
+    top: 0; /* Asegura que esté alineado en la parte superior del texto */
 }
 
 .projects {
@@ -538,7 +528,7 @@ body {
 .about-content {
     max-width: 800px;
     margin: 0 auto;
-    text-align: center;
+    text-align: justify;
 }
 
 .about-content p {
@@ -793,17 +783,26 @@ html {
 }
 
 @keyframes words{
-    0%, 20%{
-        content: "Web Developer";
+    21%, 40%{
+        content: "Desarrollador Web";
     }
     21%, 40%{
-        content: " VR Developer";
+        content: " Desarrollador VR";
     }
    
     
-    81%, 100%{
-        content: "Script Writer";
+    41%, 60%{
+        content: "Escritor de código";
     }
+    21%, 40%{
+        content: "Innovador";
+    }
+    
+    21%, 40%{
+        content: "Explorador Digital";
+    }
+
+    
 }
 
 @media (max-width: 1000px){
