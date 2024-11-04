@@ -142,6 +142,10 @@ span{
 
 .home-img{
     border-radius: 50%;
+    
+ 
+    
+   
 }
 
 .home-img img{
@@ -149,14 +153,18 @@ span{
     width: 32vw;
     border-radius: 50%;
     box-shadow: 0 0 25px solid #4b7bb7; /* Cambiado a azul */
-    cursor: pointer;
+    cursor:crosshair;
     transition: 0.2s linear;
+    
+    
+    
 }
 
 .home-img img:hover{
     font-size: 1.8rem;
     font-weight: 500;
     transform: scale(1.05); /* Efecto de hover */
+    
 }
 
 
@@ -317,7 +325,7 @@ span{
 }
 
 .project-info h3 {
-    font-size: 2rem; /* Cambia el tamaño a 4rem para que coincida con Educación y Experiencia */
+    font-size: 2.5rem; /* Cambia el tamaño a 4rem para que coincida con Educación y Experiencia */
     color: #003a70; /* Cambia el color a azul */
     margin-bottom: 1.6rem;
 }
@@ -327,7 +335,7 @@ span{
 }
 
 .project-info .technologies {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     margin-bottom: 1.5rem;
 }
 
@@ -404,7 +412,7 @@ span{
 }
 
 .education-info h3 {
-    font-size: 2rem; /* Asegúrate que el tamaño sea el mismo */
+    font-size: 2.5rem; /* Asegúrate que el tamaño sea el mismo */
     color: #003a70; /* Cambia el color a azul */
     margin-bottom: 1rem;
 }
@@ -438,7 +446,7 @@ span{
 }
 
 .experience-info h3 {
-    font-size: 2.5rem; /* Tamaño de letra igual que en Proyectos */
+    font-size: 3rem; /* Tamaño de letra igual que en Proyectos */
     color: #003a70; /* Color azul */
     margin-bottom: 0.5rem;
     font-weight: bold; /* Mantiene el texto en negrita */
@@ -487,14 +495,14 @@ body {
 }
 
 .timeline-item h3 {
-    font-size: 1.6rem;
+    font-size: 2.5rem;
     font-weight: bold;
     color: #003a70;
     margin-bottom: 10px;
 }
 
 .timeline-item p {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     color: #666;
 }
 
@@ -519,7 +527,7 @@ body {
 }
 
 .about-me h2 {
-    font-size: 2rem;
+    font-size: 4rem;
     color: #007bff;
     text-align: center;
     margin-bottom: 20px;
@@ -528,11 +536,11 @@ body {
 .about-content {
     max-width: 800px;
     margin: 0 auto;
-    text-align: justify;
+    text-align:justify;
 }
 
 .about-content p {
-    font-size: 1.1rem;
+    font-size: 1.6rem;
     line-height: 1.6;
     color: #333;
 }
