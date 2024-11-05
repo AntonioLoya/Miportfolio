@@ -5,7 +5,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/image/Logo.png" type="image/x-icon"> <!-- Aquí agregas el favicon -->
+    <link rel="icon" href="/image/Logo.png" type="image/x-icon"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <title>Portfolio | Antonio Loya</title>
@@ -72,7 +72,7 @@
                 <img src="image/Reconocimientofacial.png" alt="Descripción de la imagen del proyecto 1">
             </div>
         </div>
-        <!-- Más proyectos -->
+       
     </div>
 </section>
 <section id="education" class="education">
@@ -86,7 +86,6 @@
             </p></p>
         </div>
     </div>
-    <!-- Añade más elementos de educación según sea necesario -->
 </section>
 <section id="experience" class="experience">
     <h2><i class="fa-solid fa-briefcase"></i> Experiencia</h2>
@@ -117,7 +116,7 @@
                     <p class="company"> <i class="fa-solid fa-school"></i> Universidad Juárez Autonóma de Tabasco</p>
                     <p class="duration"> <i class="fa-solid fa-calendar-alt"></i> Noviembre 2023</p>
                     <p class="description"> <i class="fa-solid fa-info-circle"></i> Tuve la experiencia de participar en el nuevo Laboratorio de Desarrollo de Apps (X DEV LAB) de la División Académica de Ciencias y Tecnologías de la Información. Colaboré en la creación de una App de Realidad Aumentada (RA) utilizando Unity como entorno de desarrallo en conjunto de Vuforia Engine.</p>
-                    <a href="https://laguna-ilusiones.ujat.mx/app-ra2.html" class="details-btn">Ver Más</a> <!-- Enlace en lugar de botón -->
+                    <a href="https://laguna-ilusiones.ujat.mx/app-ra2.html" class="details-btn">Ver Más</a> 
                 </div>
             </div>
             <div class="timeline">
@@ -127,7 +126,7 @@
                         <p class="company"> <i class="fa-solid fa-school"></i> Universidad Juárez Autonóma de Tabasco</p>
                         <p class="duration"> <i class="fa-solid fa-calendar-alt"></i> Abril 2024</p>
                         <p class="description"> <i class="fa-solid fa-info-circle"></i> Colaboré en la creación de un zoológico virtual para una red itinerante para la conservación sustentable de organismos acuáticos de Tabasco, utilizando Unity como motor gráfico, utilizando el lenguaje de programación C# y Blender para crear modelos 3d.</p>
-                        <a href="https://pescarte.ujat.mx/virtual/" class="details-btn">Ver Más</a> <!-- Enlace en lugar de botón -->
+                        <a href="https://pescarte.ujat.mx/virtual/" class="details-btn">Ver Más</a> 
                     </div>
                 </div>
                 <div class="timeline">
@@ -154,40 +153,38 @@
                     </div>
                     
                     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-                    <!-- Modal 1 -->
-<div id="myModal1" class="modal">
-    <div class="modal-content" style="background-color: #0d0d0d; color: #e0e0e0; padding: 20px; border-radius: 8px; text-align: center;">
-        <span class="close" onclick="closeModal('myModal1')" style="float: right; cursor: pointer; color: #e0e0e0;">&times;</span>
-        <h2 style="font-family: Arial, sans-serif; color: #007bff;">Ejemplo de Modelo 3D</h2>
+                    
+                    <div id="myModal1" class="modal">
+                        <div class="modal-content" style="background-color: #0d0d0d; color: #e0e0e0; padding: 20px; border-radius: 8px; text-align: center;">
+                            <span class="close" onclick="closeModal('myModal1')" style="float: right; cursor: pointer; color: #e0e0e0;">&times;</span>
+                            <h2 style="font-family: Arial, sans-serif; color: #007bff;">Ejemplo de Modelo 3D</h2>
+                            <!-- Model Viewer -->
+                             <model-viewer src="/image/Carrizo.glb" alt="Modelo 3D del proyecto" camera-controls ar style="width: 100%; height: 300px; background: #333;">
 
-        <!-- Model Viewer -->
-        <model-viewer src="/image/Carrizo.glb" alt="Modelo 3D del proyecto" camera-controls ar style="width: 100%; height: 300px; background: #333;">
-        </model-viewer>
+                             </model-viewer>
+                             <p style="margin-top: 15px; font-size: 1em; color: #e0e0e0;">Interactúa con el modelo para visualizarlo en 3D.</p>
+                            </div>
+                        </div>
+                        
+                        <div id="myModal2" class="modal">
+                            <div class="modal-content" style="background-color: #0d0d0d; color: #e0e0e0; padding: 20px; border-radius: 8px; text-align: center;">
+                                <span class="close" onclick="closeModal('myModal2')">&times;</span>
+                                <h2 style="font-family: Arial, sans-serif; color: #007bff;">X DEV LAB</h2>
+                                <img src="/image/xdellap.jpeg" alt="Descripción del proyecto">
+                                <p>Estudiantes y profesores.</p>
+                            </div>
+                        </div>
+                        
+                        <script>
+                        function openModal(modalId) {
+                        document.getElementById(modalId).style.display = 'flex'; // Mostrar modal
+                        }
+                        
+                        function closeModal(modalId) {
+                        document.getElementById(modalId).style.display = 'none'; // Ocultar modal
+                        }
+                        </script>
 
-        <p style="margin-top: 15px; font-size: 1em; color: #e0e0e0;">Interactúa con el modelo para visualizarlo en 3D.</p>
-    </div>
-</div>
-
-
-<!-- Modal 2 -->
-<div id="myModal2" class="modal">
-    <div class="modal-content" style="background-color: #0d0d0d; color: #e0e0e0; padding: 20px; border-radius: 8px; text-align: center;">
-        <span class="close" onclick="closeModal('myModal2')">&times;</span>
-        <h2 style="font-family: Arial, sans-serif; color: #007bff;">X DEV LAB</h2>
-        <img src="/image/xdellap.jpeg" alt="Descripción del proyecto">
-        <p>Estudiantes y profesores.</p>
-    </div>
-</div>
-<script>
-    function openModal(modalId) {
-    document.getElementById(modalId).style.display = 'flex'; // Mostrar modal
-}
-
-function closeModal(modalId) {
-    document.getElementById(modalId).style.display = 'none'; // Ocultar modal
-}
-
-</script>
 <section id="about-me" class="about-me">
     <h2><i class="fa-solid fa-user"></i> Sobre Mí</h2>
     <div class="about-content">
@@ -228,9 +225,6 @@ function closeModal(modalId) {
         </p>
     </div>
 </footer>
-
-
-
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         // Seleccionamos todos los elementos de las habilidades
@@ -279,9 +273,5 @@ function closeModal(modalId) {
         });
     });
 </script>
-<script>
-    
-</script>
-
 </body>
 </html>
