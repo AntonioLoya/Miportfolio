@@ -26,18 +26,28 @@ body, html {
     overflow-x: hidden; /* Esto asegura que no haya desplazamiento horizontal */
     
 }
-
-
-header .nav-links {
+header {
     display: flex;
-    flex-wrap: wrap; /* Permite que los elementos se ajusten en múltiples líneas */
-    justify-content: center; /* Centra los enlaces en la fila */
+    flex-direction: column; /* Elementos en columna */
+    align-items: center; /* Centra horizontalmente los elementos */
+    padding: 1rem 2rem;
+    position: relative; /* Para posicionar el switch */
 }
 
+/* Contenedor de los enlaces */
+header .nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem; /* Espacio entre los enlaces */
+    margin-bottom: 1rem; /* Separación inferior para el botón */
+    flex-wrap: wrap; /* Permite que los enlaces se ajusten en varias líneas si es necesario */
+}
+
+/* Estilo de los enlaces */
 header .nav-links a {
-    font-size: 1.5rem; /* Ajusta el tamaño de fuente para pantallas más pequeñas */
+    font-size: 1.2rem; /* Ajuste del tamaño del texto */
     color: #666;
-    margin: 0 1rem; /* Espacio entre los enlaces */
     font-weight: 500;
     transition: 0.3s ease;
     border-bottom: 3px solid transparent;
@@ -47,6 +57,57 @@ header .nav-links a:hover,
 header .nav-links a.active {
     color: #4b7bb7;
     border-bottom: 3px solid #4b7bb7;
+}
+
+/* Posición del switch */
+header .theme-toggle {
+    position: absolute; /* Coloca el switch en la esquina superior derecha */
+    top: 1rem;
+    right: 1.5rem; /* Ajusta la distancia para pantallas pequeñas */
+    display: flex;
+    align-items: center;
+}
+/* Media Query para pantallas pequeñas (tablets) */
+@media (max-width: 768px) {
+    header {
+        padding: 1rem 1.5rem; /* Ajuste del padding */
+        flex-direction: column; /* Cambia la disposición para apilar elementos */
+        align-items: center; /* Centra los elementos horizontalmente */
+    }
+
+    header .nav-links {
+        gap: 1rem; /* Reduce el espacio entre enlaces */
+        justify-content: center; /* Centra los enlaces */
+        width: 100%; /* Ocupa todo el ancho disponible */
+    }
+
+    /* Ajustes a los enlaces */
+    header .nav-links a {
+        font-size: 1.1rem; /* Ajusta el tamaño de los enlaces */
+    }
+
+    /* Posición del switch debajo del menú */
+    header .theme-toggle {
+        position: relative;
+        top: 0; /* Hace que el switch esté debajo del menú */
+        margin-top: 1rem; /* Espacio entre los enlaces y el switch */
+    }
+}
+
+/* Media Query para pantallas muy pequeñas (teléfonos) */
+@media (max-width: 480px) {
+    header .nav-links {
+        gap: 0.8rem; /* Reduce aún más el espacio entre enlaces */
+    }
+
+    header .nav-links a {
+        font-size: 1rem; /* Ajuste en el tamaño del texto */
+    }
+
+    header .theme-toggle {
+        top: 0.5rem;
+        right: 0.5rem; /* Ajusta la distancia para pantallas más pequeñas */
+    }
 }
 
 @media (max-width: 600px) {
@@ -523,26 +584,22 @@ body {
 
 .about-me {
     padding: 50px;
-    background-color: #f9f9f9;
+    background-color: #ffffff1a;
 }
 
 .about-me h2 {
     font-size: 4rem;
-    color: #007bff;
-    text-align: center;
+    color: #666;
+    text-align: right ;
     margin-bottom: 20px;
 }
 
-.about-content {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align:justify;
-}
+
 
 .about-content p {
     font-size: 1.6rem;
     line-height: 1.6;
-    color: #333;
+    color: #666;
 }
 
 #about-me {
@@ -714,6 +771,7 @@ html {
 
 
 /* Estilos para el modal */
+/* Estilos para el modal */
 .modal {
     display: none; /* Ocultar el modal por defecto */
     position: fixed;
@@ -725,22 +783,98 @@ html {
     background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
     justify-content: center;
     align-items: center;
+    transition: all 0.3s ease; /* Transición para el fondo */
 }
 
+/* Estilos para el contenido del modal */
 .modal-content {
-    background-color: #4b7bb7;
-    margin: auto;
+    background-color: #0d0d0d; /* Fondo oscuro por defecto */
+    color: #e0e0e0; /* Color del texto por defecto */
     padding: 20px;
-    border-radius: 10px;
-    max-width: 600px; /* Limitar ancho máximo */
-    width: 90%; /* Ancho responsivo */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra */
-    position: relative;
+    border-radius: 8px;
     text-align: center;
-    color: #333; /* Color del texto */
-    transition: all 0.3s ease-in-out; /* Transición suave */
+    max-width: 600px;
+    width: 90%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra sutil */
+    transition: all 0.3s ease; /* Transición suave */
 }
 
+/* Estilos del título */
+.modal-content h2 {
+    font-family: Arial, sans-serif;
+    color: #007bff; /* Color del título */
+}
+
+/* Estilos para la imagen dentro del modelo */
+model-viewer {
+    background: #333;
+    border-radius: 8px;
+}
+
+/* Modal */
+.modal-content {
+    background-color: #0d0d0d;
+    color: #e0e0e0;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    position: relative; /* Agregar position relative para que el botón de cierre esté dentro de este contenedor */
+    max-width: 600px;
+    width: 90%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Botón de cierre */
+.close {
+    color: #e0e0e0;
+    font-size: 2.5rem;
+    font-weight: bold;
+    position: absolute; /* Asegura que el botón se posicione respecto al contenedor modal-content */
+    top: 10px;  /* Ajuste desde la parte superior */
+    right: 10px; /* Ajuste desde el borde derecho */
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* Hover sobre el botón de cierre */
+.close:hover,
+.close:focus {
+    color: #007bff;
+}
+
+
+
+/* Modo claro: Cambia el fondo y texto */
+body.light-mode .modal-content {
+    background-color: #fff; /* Fondo blanco */
+    color: #333; /* Texto oscuro */
+}
+
+body.light-mode .modal-content h2 {
+    color: #007bff; /* Título en azul en modo claro */
+}
+
+body.light-mode .modal-content p {
+    color: #333; /* Texto oscuro */
+}
+
+body.light-mode .close {
+    color: #333; /* Botón de cierre en color oscuro */
+}
+
+body.light-mode .modal {
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo más claro para el modal */
+}
+
+/* Modo claro */
+body.light-mode .modal-content {
+    background-color: #fff; /* Fondo blanco para modo claro */
+    color: #333; /* Texto oscuro */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra más suave */
+}
+
+/* Imágenes dentro del modal */
 .modal-content img {
     max-width: 100%; /* La imagen no debe exceder el ancho del modal */
     height: auto; /* Mantener proporción de la imagen */
@@ -749,12 +883,19 @@ html {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra para la imagen */
 }
 
+/* Estilos para el texto en el modal */
 .modal-content p {
     font-size: 1.6rem; /* Ajustar tamaño del texto */
-    color: #f5f6f8; /* Color acorde al tema */
+    color: #f5f6f8; /* Color de texto en modo oscuro */
     margin-top: 1rem;
 }
 
+/* Modo claro para el texto */
+body.light-mode .modal-content p {
+    color: #333; /* Texto oscuro en modo claro */
+}
+
+/* Estilo para el botón de cierre (X) */
 .close {
     color: #4b7bb7;
     font-size: 2.5rem;
@@ -765,11 +906,16 @@ html {
     cursor: pointer;
 }
 
+/* Efecto al pasar el ratón sobre el botón de cierre */
 .close:hover,
 .close:focus {
     color: black;
 }
 
+/* Modo claro para el botón de cierre */
+body.light-mode .close {
+    color: #333; /* Color oscuro para el botón de cierre en modo claro */
+}
 /* Animación para el modal */
 @keyframes modalFadeIn {
     from { opacity: 0; transform: translateY(-20px); }
@@ -838,3 +984,224 @@ html {
         margin-top: 4rem;
     }
 }
+/* Home */
+body.light-mode .home {
+    background-color: white;
+    color: #333;
+}
+body.light-mode {
+    background-color: white;
+    color: #333;
+}
+/* Boton */
+body.light-mode .btn {
+    background-color: white;
+    color: #4b7bb7;
+    border-color: #4b7bb7;
+}
+
+body.light-mode .btn:hover {
+    background-color: #4b7bb7;
+    color: white;
+}
+
+/* Proyectos */
+body.light-mode .projects {
+    background-color: white;
+    color: #333;
+}
+
+body.light-mode .projects .project {
+    background-color: #f5f5f5;
+    
+    
+    padding: 20px;
+    margin-bottom: 10px; /* Espacio entre proyectos */
+}
+
+body.light-mode .projects .project:hover {
+    background-color: #e6f0ff;
+    border-color: #4b7bb7;
+}
+
+/* Educación */
+body.light-mode .education {
+    background-color: white;
+    color: #333;
+}
+
+body.light-mode .education .education-item {
+    background-color: #f5f5f5;
+    border-color: #ddd;
+}
+
+body.light-mode .education .education-item:hover {
+    background-color: #e6f0ff;
+    border-color: #4b7bb7;
+}
+/* Navbar */
+body.light-mode nav {
+    background-color: white;
+    color: #333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode nav a {
+    color: #4b7bb7;
+}
+
+body.light-mode nav a:hover {
+    color: #333;
+}
+
+/* Experiencia */
+body.light-mode .experience {
+    background-color: white;
+    color: #333;
+}
+
+body.light-mode .experience .timeline-item {
+    background-color: #f5f5f5;
+    padding: 0;
+    margin-bottom: 10px; /* Espacio entre experiencias */
+    border-radius: 10px  ;
+    
+}
+
+body.light-mode .experience .timeline-item:hover {
+    background-color: #e6f0ff;
+    border-color: #4b7bb7;
+}
+
+
+/* Estilos generales para el footer */
+footer {
+    padding: 40px 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    border-top: 3px solid #007bff;
+}
+/* From Uiverse.io by 3bdel3ziz-T */ 
+/* The switch container */
+.switch {
+    --transition: 300ms;
+    --transition500: 500ms;
+    --color-dark: #0c0f14;
+    --color-darkGray: #21262e;
+    --color-gray: #52555a;
+    --color-offwhite: #cecece;
+    --shadow-color: var(--color-dark);
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 60px;
+    height: fit-content;
+    background-color: var(--color-dark);
+    border-radius: 30px;
+    padding: 4px;
+    transition: var(--transition500);
+    user-select: none;
+    cursor: pointer;
+    overflow: hidden;
+    transform: scale(0.8);
+  }
+  
+  /* Svg styles */
+  .switch .svg {
+    transition: var(--transition);
+    position: absolute;
+    left: 5px;
+  }
+  .switch .moon {
+    width: 18px;
+    fill: var(--color-gray);
+    opacity: 1;
+  }
+  
+  .switch .sun {
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    left: calc(100% - 21.5px);
+    top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scale: 0.8;
+    opacity: 0;
+  }
+  
+  .switch .sun .dot {
+    positon: relative;
+    display: block;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: var(--color-dark);
+    background: white;
+    z-index: 1;
+    box-shadow: 11px 0px 0px var(--shadow-color),
+      10.3px 0px 0px var(--shadow-color), -11px 0px 0px var(--shadow-color),
+      -10.3px 0px 0px var(--shadow-color), 0px -11px 0px var(--shadow-color),
+      0px -10.3px 0px var(--shadow-color), 0px 11px 0px var(--shadow-color),
+      0px 10.3px 0px var(--shadow-color), 8px 8px 0px var(--shadow-color),
+      7.3px 7.3px 0px var(--shadow-color), 8px -8px 0px var(--shadow-color),
+      7.3px -7.3px 0px var(--shadow-color), -8px -8px 0px var(--shadow-color),
+      -7.3px -7.3px 0px var(--shadow-color), -8px 8px 0px var(--shadow-color),
+      -7.3px 7.3px 0px var(--shadow-color);
+  }
+  
+  .switch .sun .dot::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: white;
+    border: 2px solid var(--color-dark);
+  }
+  
+  /*checkbox styles */
+  .switch .circle {
+    appearance: none;
+    position: relative;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    left: 0;
+    background-color: var(--color-darkGray);
+    border: 1px solid var(--color-darkGray);
+    transition: var(--transition500);
+    box-shadow: 1px 1px 20px 3px var(--color-darkGray);
+  }
+  
+  .switch:has(.circle:checked) {
+    background: var(--color-offwhite);
+  }
+  
+  .switch .circle:hover {
+    margin-left: 3px;
+  }
+  .switch .circle:checked:hover {
+    margin-left: -3px;
+  }
+  
+  .switch .circle:checked {
+    left: calc(100% - 24px);
+    background: white;
+    border-color: white;
+    box-shadow: 1px 1px 30px 12px white;
+  }
+  
+  .switch:has(.circle:checked) > .sun {
+    opacity: 1;
+  }
+  
+  .switch:has(.circle:checked) > .moon {
+    opacity: 0;
+  }
+  
