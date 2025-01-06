@@ -236,11 +236,17 @@
 
 <footer>
     <div>
-        <p>&copy; 2024 Antonio De Jesús Loya Castillo.</p>
+        <p>&copy; <span id="year"></span> Antonio De Jesús Loya Castillo.</p>
         <p>Desarrollador apasionado por crear experiencias inmersivas y soluciones innovadoras.</p>
         <p>Todos los derechos reservados.</p>
     </div>
 </footer>
+
+<script>
+    // Obtiene el año actual y lo inserta en el elemento con id "year"
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
 <script>
 const themeSwitch = document.getElementById('theme-switch');
 const body = document.body;
@@ -252,8 +258,6 @@ themeSwitch.addEventListener('change', () => {
         body.classList.remove('light-mode');
     }
 });
-
-
 </script>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
