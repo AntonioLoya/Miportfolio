@@ -416,14 +416,45 @@ span{
 }
 
 .project-image {
-    flex: 0 0 30%; /* Ajusta el tamaño de la imagen */
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .project-image img {
-    width: 100%; /* Ajusta la imagen al contenedor */
-    border-radius: 1rem; /* Bordes redondeados para la imagen */
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Sombra para la imagen */
+    max-width: 100%;
+    width: 35%;
+    height: auto;
+    border-radius: 1.2rem;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.25);
+    object-fit: contain;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
+
+/* Efecto hover para hacerla más interactiva */
+.project-image img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+    .project {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .project-info {
+        margin-right: 0;
+        margin-bottom: 1.5rem;
+    }
+
+    .project-image img {
+        width: 70%;
+    }
+}
+
 
 .technologies img,
 .technologies svg {
